@@ -1,2 +1,2 @@
 # pagamento
-Microservice Springboot
+Microservice de exemplo - pagamentos
