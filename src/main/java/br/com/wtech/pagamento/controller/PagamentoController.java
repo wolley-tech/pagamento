@@ -23,7 +23,14 @@ public class PagamentoController {
 
 
     @PostMapping
-    public ResponseEntity<Void> validar(@RequestBody PagamentoRequest request){
+    public ResponseEntity<Void> processar(@RequestBody PagamentoRequest request) throws InterruptedException {
+
+        var cont = 0;
+        while (cont < 10){
+            Thread.sleep(1000L);
+            System.out.println(cont+ " - Processando o pagamento: "+request);
+            cont++;
+        }
 
         if(ccvs.contains(request.getCartao().getCcv())){
             return  ResponseEntity
